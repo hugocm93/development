@@ -10,22 +10,22 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)        # Include hidden files.
+#autoload -U compinit
+#zstyle ':completion:*' menu select
+#zmodload zsh/complist
+#compinit
+#_comp_options+=(globdots)        # Include hidden files.
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+#bindkey -M menuselect 'h' vi-backward-char
+#bindkey -M menuselect 'k' vi-up-line-or-history
+#bindkey -M menuselect 'l' vi-forward-char
+#bindkey -M menuselect 'j' vi-down-line-or-history
+#bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
 #function zle-keymap-select {
@@ -46,7 +46,7 @@ bindkey -v '^?' backward-delete-char
 
 cfiles ()
 {
-    /local/hmachado/bin/cfiles/cfiles .
+    $HOME/programs/cfiles/cfiles .
 }
 
  bindkey -s '^o' 'cfiles\n'

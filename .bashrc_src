@@ -65,7 +65,4 @@ export LD_LIBRARY_PATH=$HOME/programs/sconsify:$LD_LIBRARY_PATH
 export GREP_OPTIONS="--exclude=*.svn-base --exclude=*.netbeans-base --exclude=*.tmp --exclude=*/.svn/* --exclude=tags"
 alias grep='grep --color=auto'
 
-# Default key repetition
-xset r rate
-
 cd $HOME 
