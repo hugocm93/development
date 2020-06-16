@@ -1,0 +1,14 @@
+[user]
+	name = Hugo Costa Machado
+	email = hmachado@tecgraf.puc-rio.br 
+[merge]
+    ff=only
+[pull]
+    rebase = true 
+[http]
+	ssverify = true
+[core]
+	excludesfile = /local/hmachado/.gitignore
+	editor = /local/hmachado/programs/tools/vim-8.2/bin/vim
+[color]
+	ui = true
