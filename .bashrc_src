@@ -19,7 +19,7 @@ alias glade='/home/p/libs/libsgtk_64/bin/glade-3'
 alias cmatrix='$HOME/Desktop/cmatrix/cmatrix'
 alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/'
 alias newTmux='tmux -S /tmp/sharedtmux new -s shared'
-alias attachTmux='tmux -S /tmp/sharedtmux attrach -t shared'
+alias attachTmux='tmux -S /tmp/sharedtmux attach -t shared'
 
 #Directories
 alias gov3o2='cd $V3O2_PATH'
