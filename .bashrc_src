@@ -8,7 +8,11 @@ export MODE="release" #debug ou release ou gdb ou unit_tests
 #Programs
 alias ctags='$HOME/programs/ctags/bin/bin/ctags'
 alias val='$HOME/programs/val.sh'
-alias git="/opt/rh/devtoolset-2/root/usr/bin/git"
+
+if [ -d "/opt/rh/devtoolset-2/" ]; then
+    alias git="/opt/rh/devtoolset-2/root/usr/bin/git"
+fi
+
 alias vimDiff='git diff | vim -R -'
 alias editCurrent='vim `git diff --name-only --diff-filter=M | xargs`'
 alias patchMe='patch -p0 < ../../hack.patch'
