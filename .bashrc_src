@@ -2,31 +2,31 @@
 export LD_LIBRARY_PATH=/usr/local/lib
 
 #vars
-WORK="/local/hmachado/"
-V3O2_PATH=$WORK"v3o2"
+V3O2_PATH=$HOME"/v3o2"
 export MODE="release" #debug ou release ou gdb ou unit_tests
 
 #Programs
-alias ctags='$WORK/bin/ctags-5.8/ctags'
-alias val='$WORK/bin/val.sh'
-alias all='$WORK/bin/all.sh'
+alias ctags='$HOME/programs/ctags/bin/bin/ctags'
+alias val='$HOME/programs/val.sh'
 alias git="/opt/rh/devtoolset-2/root/usr/bin/git"
 alias vimDiff='git diff | vim -R -'
 alias editCurrent='vim `git diff --name-only --diff-filter=M | xargs`'
 alias patchMe='patch -p0 < ../../hack.patch'
-alias sconsify='~/bin/sconsify/sconsify -username="12163089012" -open-browser-cmd firefox'
-alias bb='~/bin/boost_build/bin/b2 -j8 -sBOOST_ROOT=/local/hmachado/bin/boost_build/'
-alias tyrian='~/bin/opentyrian/opentyrian -t ~/bin/opentyrian/tyrian21/'
-alias telegram='~/bin/tg/bin/telegram-cli -N'
+alias sconsify='$HOME/programs/sconsify/sconsify -username="12163089012" -open-browser-cmd firefox'
+alias bb='$HOME/programs/boost_build/bin/b2 -j8 -sBOOST_ROOT=$HOME/programs/boost_build/'
+alias telegram='$HOME/programs/tg/bin/telegram-cli -N'
 alias glade='/home/p/libs/libsgtk_64/bin/glade-3'
-alias cmatrix='~/Desktop/cmatrix/cmatrix'
+alias cmatrix='$HOME/Desktop/cmatrix/cmatrix'
+alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/'
+alias newTmux='tmux -S /tmp/sharedtmux new -s shared'
+alias attachTmux='tmux -S /tmp/sharedtmux attrach -t shared'
 
 #Directories
 alias gov3o2='cd $V3O2_PATH'
 alias gotest='cd $V3O2_PATH/test'
 alias gosource='cd $V3O2_PATH/src'
 alias gobuild='cd $V3O2_PATH/build'
-alias check='echo $MODE ; ls -la $WORK/v3o2'
+alias check='echo $MODE ; ls -la $V3O2_PATH'
 
 alias fast='$V3O2_PATH/build/make.sh $MODE'
 alias quick='$V3O2_PATH/build/make.sh $MODE -j14'
@@ -38,7 +38,7 @@ alias release='export MODE="release" ; check'
 alias gdbMode='export MODE="gdb" ; check'
 alias eight='scl enable devtoolset-8 bash'
 
-alias CTAGS='~/bin/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
+alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
 alias genTags='cd $V3O2_PATH/src ; CTAGS ;
                cd $V3O2_PATH/lib ; CTAGS ;
                cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
@@ -47,19 +47,19 @@ alias genTags='cd $V3O2_PATH/src ; CTAGS ;
 alias run='fast ; execute'
 
 #v3o2 symbolic links
-alias repo1='ln -sfn ~/v3o2_folders/repo1/v3o2         ~/v3o2 ; check'
-alias repo2='ln -sfn ~/v3o2_folders/repo2/v3o2         ~/v3o2 ; check'
+alias repo1='ln -sfn $HOME/v3o2_folders/repo1/v3o2         $V3O2_PATH ; check'
+alias repo2='ln -sfn $HOME/v3o2_folders/repo2/v3o2         $V3O2_PATH ; check'
 
 #Adding some programs to the path
 export LD_LIBRARY_PATH
 export CPATH
 export MANPATH
-source $WORK/bin/tools/tools.sh $WORK/bin/tools/vim-8.1
+source $HOME/programs/tools/tools.sh $HOME/programs/tools/vim-8.2
 export SVN_EDITOR=vim
 
 export LD_LIBRARY_PATH=/nethome/p/INT/CarnacGeo-44_/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=~/v3o2/dependencies/ext/qt_Linux64e6/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/local/hmachado/bin/sconsify:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/v3o2/dependencies/ext/qt_Linux64e6/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/programs/sconsify:$LD_LIBRARY_PATH
 
 #Grep Settings
 export GREP_OPTIONS="--exclude=*.svn-base --exclude=*.netbeans-base --exclude=*.tmp --exclude=*/.svn/* --exclude=tags"
@@ -68,4 +68,4 @@ alias grep='grep --color=auto'
 # Default key repetition
 xset r rate
 
-cd ~ 
+cd $HOME 

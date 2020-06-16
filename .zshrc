@@ -62,4 +62,4 @@ cfiles ()
  # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.bashrc2'
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.bashrc_src'
