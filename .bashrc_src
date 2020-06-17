@@ -3,6 +3,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 
 #vars
 V3O2_PATH=$HOME"/v3o2"
+QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e7/"
 export MODE="release" #debug ou release ou gdb ou unit_tests
 
 #Programs
@@ -13,6 +14,12 @@ if [ -d "/opt/rh/devtoolset-2/" ]; then
     alias git="/opt/rh/devtoolset-2/root/usr/bin/git"
 fi
 
+if [ -d "/opt/rh/devtoolset-2/" ]; then
+    QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e6/"
+else
+    QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e7/"
+fi
+
 alias vimDiff='git diff | vim -R -'
 alias editCurrent='vim `git diff --name-only --diff-filter=M | xargs`'
 alias patchMe='patch -p0 < ../../hack.patch'
@@ -21,6 +28,7 @@ alias bb='$HOME/programs/boost_build/bin/b2 -j8 -sBOOST_ROOT=$HOME/programs/boos
 alias telegram='$HOME/programs/tg/bin/telegram-cli -N'
 alias glade='/home/p/libs/libsgtk_64/bin/glade-3'
 alias cmatrix='$HOME/Desktop/cmatrix/cmatrix'
+alias saciTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/ -sCORUJA_ROOT=$V3O2_PATH/dependencies/ext/coruja/ -sQT_ROOT=$QT_ROOT'
 alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/'
 alias newTmux='tmux -S /tmp/sharedtmux new -s shared'
 alias attachTmux='tmux -S /tmp/sharedtmux attach -t shared'
@@ -40,7 +48,7 @@ alias execute='vglrun $V3O2_PATH/build/v3o2.sh $MODE'
 alias debug='export MODE="debug" ; check'
 alias release='export MODE="release" ; check'
 alias gdbMode='export MODE="gdb" ; check'
-alias eight='scl enable devtoolset-8 bash'
+alias eight='scl enable devtoolset-8 zsh'
 
 alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
 alias genTags='cd $V3O2_PATH/src ; CTAGS ;
