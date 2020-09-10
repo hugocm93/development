@@ -12,3 +12,8 @@
 	editor = /local/hmachado/programs/tools/vim-8.2/bin/vim
 [color]
 	ui = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status

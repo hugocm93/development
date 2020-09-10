@@ -63,6 +63,7 @@ alias run='fast ; execute'
 #v3o2 symbolic links
 alias repo1='ln -sfn $HOME/v3o2_folders/repo1/v3o2         $V3O2_PATH ; check'
 alias repo2='ln -sfn $HOME/v3o2_folders/repo2/v3o2         $V3O2_PATH ; check'
+alias repo3='ln -sfn $HOME/v3o2_folders/repo3/v3o2         $V3O2_PATH ; check'
 
 #Adding some programs to the path
 export LD_LIBRARY_PATH
