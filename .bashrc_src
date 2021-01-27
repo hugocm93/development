@@ -81,3 +81,5 @@ export GREP_OPTIONS="--exclude=*.svn-base --exclude=*.netbeans-base --exclude=*.
 alias grep='grep --color=auto'
 
 cd $HOME 
+
+export LC_ALL=C; unset LANGUAGE
