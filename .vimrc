@@ -13,6 +13,7 @@ set wildmenu
 " Key mappings
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map ,jj :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map ,mm <F2>
 map <F2> :NERDTreeToggle<CR>
 map <F5> :cexpr system('release ; fast') \| copen<CR>
 map <F6> :cexpr system('debug ; fast') \| copen<CR>
@@ -88,6 +89,7 @@ set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/qt
 set tags+=~/.vim/tags/c++
 set tags+=~/.vim/tags/include
+set tags+=~/conan_storage/boost/1.75.0/_/_/package/b4cf9557a183758df446dd9058601421b40166b0/tags
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 0
@@ -115,4 +117,6 @@ set t_BE=
 " 'filetype' that has already been set
 au BufRead,BufNewFile *.tpp set filetype=cpp
 
-set encoding=utf8
+set fileencodings=utf-8
+set termencoding=utf-8
+set encoding=utf-8

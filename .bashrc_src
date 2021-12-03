@@ -57,6 +57,7 @@ alias genTags='cd $V3O2_PATH/src ; CTAGS ;
                cd $V3O2_PATH/lib ; CTAGS ;
                cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
                cd $V3O2_PATH/dependencies ; CTAGS ;
+               cd $HOME/conan_storage/boost/1.75.0/_/_/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
                cd $V3O2_PATH/ ; echo Done'
 alias run='fast ; execute'
 
@@ -82,4 +83,6 @@ alias grep='grep --color=auto'
 
 cd $HOME 
 
-export LC_ALL=C; unset LANGUAGE
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
