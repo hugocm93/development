@@ -16,4 +16,7 @@ mkdir v3o2_folders
 mkdir v3o2_folders/repo1
 #fazer git clone do v3o2 em v3o2_folders/repo1
 release #cria link simbólico do v3o2
+
+#jira-cli
+criar jira_auth.sh com variáveis de ambiente para jira-cli
 ```

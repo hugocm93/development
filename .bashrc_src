@@ -4,7 +4,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 #vars
 V3O2_PATH=$HOME"/v3o2"
 QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e7/"
-export MODE="release" #debug ou release ou gdb ou unit_tests
+export MODE="release" #debug ou release ou gdb
 
 #Programs
 alias ctags='$HOME/programs/ctags/bin/bin/ctags'
@@ -22,11 +22,8 @@ fi
 
 alias vimDiff='git diff | vim -R -'
 alias editCurrent='vim `git diff --name-only --diff-filter=M | xargs`'
-alias patchMe='patch -p0 < ../../hack.patch'
-alias sconsify='$HOME/programs/sconsify/sconsify -username="12163089012" -open-browser-cmd firefox'
 alias bb='$HOME/programs/boost_build/bin/b2 -j8 -sBOOST_ROOT=$HOME/programs/boost_build/'
 alias glade='/home/p/libs/libsgtk_64/bin/glade-3'
-alias cmatrix='$HOME/Desktop/cmatrix/cmatrix'
 alias saciTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/ -sCORUJA_ROOT=$V3O2_PATH/dependencies/ext/coruja/ -sQT_ROOT=$QT_ROOT'
 alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/'
 alias newTmux='tmux -S /tmp/sharedtmux new -s shared'
@@ -43,9 +40,7 @@ alias goRange='cd $V3O2_PATH/dependencies/ext/range-v3'
 alias check='echo $MODE ; ls -la $V3O2_PATH'
 
 alias fast='$V3O2_PATH/build/make.sh $MODE'
-alias quick='$V3O2_PATH/build/make.sh $MODE -j14'
 
-alias gencmake='$V3O2_PATH/build/gen_cmake.sh local ; $V3O2_PATH/build/make.sh $MODE'
 alias execute='vglrun $V3O2_PATH/build/v3o2.sh $MODE'
 alias debug='export MODE="debug" ; check'
 alias release='export MODE="release" ; check'
@@ -57,7 +52,8 @@ alias genTags='cd $V3O2_PATH/src ; CTAGS ;
                cd $V3O2_PATH/lib ; CTAGS ;
                cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
                cd $V3O2_PATH/dependencies ; CTAGS ;
-               cd $HOME/conan_storage/boost/1.75.0/_/_/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
+               cd /local/hmachado/conan_storage/boost/1.75.0/tecgraf/v3o2/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
+               cd /local/hmachado/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ ; CTAGS ;
                cd $V3O2_PATH/ ; echo Done'
 alias run='fast ; execute'
 
@@ -71,18 +67,21 @@ export LD_LIBRARY_PATH
 export CPATH
 export MANPATH
 source $HOME/programs/tools/tools.sh $HOME/programs/tools/vim-8.2
-export SVN_EDITOR=vim
 
 export LD_LIBRARY_PATH=/nethome/p/INT/CarnacGeo-44_/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$HOME/v3o2/dependencies/ext/qt_Linux64e6/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$HOME/programs/sconsify:$LD_LIBRARY_PATH
 
 #Grep Settings
 export GREP_OPTIONS="--exclude=*.svn-base --exclude=*.netbeans-base --exclude=*.tmp --exclude=*/.svn/* --exclude=tags"
 alias grep='grep --color=auto'
 
-cd $HOME 
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+
+# sets JIRA_AUTH_TYPE="bearer"
+# sets JIRA_API_TOKEN="token..."
+source $HOME/.jira_auth.sh
+alias jira='$HOME/programs/jira-cli/bin/jira'
+
+cd $HOME 

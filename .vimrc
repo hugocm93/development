@@ -89,7 +89,10 @@ set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/qt
 set tags+=~/.vim/tags/c++
 set tags+=~/.vim/tags/include
-set tags+=~/conan_storage/boost/1.75.0/_/_/package/b4cf9557a183758df446dd9058601421b40166b0/tags
+set tags+=~/conan_storage/boost/1.75.0/tecgraf/v3o2/package/b4cf9557a183758df446dd9058601421b40166b0/tags
+set tags+=~/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/tags
+set tags+=~/conan_storage/tl-expected/20190710/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/tags
+set tags+=~/conan_storage/cpprestsdk/2.10.18/tecgraf/v3o2/package/bdd715b376beff1ad18556afe901911248f941c6/tags
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 0

@@ -3,3 +3,5 @@ tags
 *.swo
 dependencies/tec/geresim
 build/*
+test/build/*
+test/Testing
