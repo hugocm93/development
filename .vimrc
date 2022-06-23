@@ -15,10 +15,6 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map ,jj :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map ,mm <F2>
 map <F2> :NERDTreeToggle<CR>
-map <F5> :cexpr system('release ; fast') \| copen<CR>
-map <F6> :cexpr system('debug ; fast') \| copen<CR>
-map <F7> :cexpr system('release ; execute') \| copen<CR>
-map <F8> :cexpr system('debug ; execute') \| copen<CR>
 
 " Formatting parameters
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -60,9 +56,6 @@ nnoremap ,cout :r /local/hmachado/.vim/vimFileTemplates/Cout<CR>
 nnoremap ,ios :r /local/hmachado/.vim/vimFileTemplates/Iostream<CR>
 
 vnoremap // y/<C-R>"<CR>
-
-" Terminal size
-"set termwinsize=10x0
 
 " Disabling arrow keys
 noremap <Up> <NOP>
@@ -112,9 +105,6 @@ set splitbelow
 
 "Solving paste problem
 set t_BE=
-
-"set list
-"set lcs+=space:·
 
 " Set the filetype based on the file's extension, overriding any
 " 'filetype' that has already been set
