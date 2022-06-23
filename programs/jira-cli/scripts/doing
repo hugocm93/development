@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jira sprint list --current -a$(jira me) -s"In Progress" --columns key --plain --no-headers

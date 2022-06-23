@@ -82,6 +82,7 @@ export LANGUAGE=en_US.UTF-8
 # sets JIRA_AUTH_TYPE="bearer"
 # sets JIRA_API_TOKEN="token..."
 source $HOME/.jira_auth.sh
-alias jira='$HOME/programs/jira-cli/bin/jira'
+export PATH=$HOME/programs/jira-cli/bin/:$PATH
+export PATH=$HOME/programs/jira-cli/scripts/:$PATH
 
 cd $HOME 

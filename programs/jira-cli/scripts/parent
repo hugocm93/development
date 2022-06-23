@@ -1,0 +1,37 @@
+#!/bin/bash
+
+child=""
+function get_child() {
+    if test -n "$1"; then
+        child=$1
+    elif test ! -t 0; then
+        child=$( cat )
+    else
+        echo "Error: Provide child issue code."
+        exit 1
+    fi
+}
+
+get_child $1
+
+issues=`jira sprint list --current -s~"Closed" -t~"Technical task" --order-by rank --reverse --columns key --plain --no-headers 2>/dev/null | xargs`
+
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
+for issue in $issues
+do
+    children=`jira issue list --parent $issue --columns key -s~"Closed" --plain --no-headers 2>/dev/null | xargs`
+    containsElement "$child" $children
+    if [ "$?" -eq "0" ]; then
+        echo $issue
+        exit 1
+    fi
+done
+
+echo "" 
+exit 0
