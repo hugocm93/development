@@ -19,4 +19,4 @@ summary=`jira issue list -q "key = $code" --plain --no-headers --columns summary
 
 echo "[`parent $code`][$code] $summary"
 
-exit 0
+exit $? 

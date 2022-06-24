@@ -13,3 +13,4 @@ function get_user() {
 get_user $1
 
 jira sprint list --current -a"$user" -s"In Progress" --columns key --plain --no-headers | xargs
+exit $?

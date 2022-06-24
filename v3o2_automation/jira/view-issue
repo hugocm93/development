@@ -16,3 +16,4 @@ function get_code() {
 get_code $1
 
 jira issue view $code
+exit $?

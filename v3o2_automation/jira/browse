@@ -16,4 +16,4 @@ function get_code() {
 get_code $1
 
 echo "https://jira.tecgraf.puc-rio.br/jira/browse/$code"
-exit 0
+exit $? 

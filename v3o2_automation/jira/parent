@@ -29,9 +29,9 @@ do
     containsElement "$child" $children
     if [ "$?" -eq "0" ]; then
         echo $issue
-        exit 1
+        exit 0
     fi
 done
 
 echo "" 
-exit 0
+exit 1

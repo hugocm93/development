@@ -1,5 +1,4 @@
 #!/bin/bash
 
 jira issue move "$@"
-
-exit 0
+exit $? 

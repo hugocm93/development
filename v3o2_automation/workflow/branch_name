@@ -17,4 +17,4 @@ get_code $1
 
 echo $code | tr '[:upper:]' '[:lower:]'
 
-exit 0
+exit $? 

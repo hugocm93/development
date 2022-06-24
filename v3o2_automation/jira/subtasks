@@ -17,4 +17,4 @@ get_code $1
 
 jira issue list --parent $code --columns key,summary,status,assignee -s~"Closed"
 
-exit 0
+exit $? 

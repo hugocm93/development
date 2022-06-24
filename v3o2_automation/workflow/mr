@@ -17,8 +17,7 @@ glab mr create \
     --target-branch master \
     --label "$label" \
     --push \
-    --yes
+    --yes && \
+    mv-issue `doing` "Ready To Code Review"
 
-mv-issue `doing` "Ready To Code Review"
-
-exit 0
+exit $?
