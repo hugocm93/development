@@ -1,0 +1,26 @@
+#!/bin/bash
+
+child=""
+function get_child() {
+    if test -n "$1"; then
+        child=$1
+    elif test ! -t 0; then
+        child=$( cat )
+    else
+        echo "Error: Provide child issue code."
+        exit 1
+    fi
+}
+
+get_child $1
+
+curl \
+    -s \
+    -X GET \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer $JIRA_API_TOKEN" \
+    http://jira.tecgraf.puc-rio.br:8080/jira/rest/api/latest/issue/$child \
+        | python2 -c "import sys, json; print json.load(sys.stdin)['fields']['customfield_14468']['value']"
+
+exit $?
