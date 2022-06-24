@@ -1,3 +1,0 @@
-#!/bin/bash
-
-jira sprint list --current -s"In Code Review" --columns key --plain --no-headers | xargs

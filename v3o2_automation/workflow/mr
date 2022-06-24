@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# git 1.8.4
+if [ -d "/opt/rh/devtoolset-2/" ]; then
+    export PATH="/opt/rh/devtoolset-2/root/usr/bin/":$PATH
+fi
+
+#TODO: pegar de config
+label="Equipe Y"
+
+glab mr create \
+    --fill \
+    --fill-commit-body \
+    --assignee `jira me` \
+    --allow-collaboration \
+    --remove-source-branch \
+    --target-branch master \
+    --label "$label" \
+    --push \
+    --yes
+
+doing | mv-issue "Ready To Code Review"
+exit 0

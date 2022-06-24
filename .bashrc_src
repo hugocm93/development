@@ -83,6 +83,12 @@ export LANGUAGE=en_US.UTF-8
 # sets JIRA_API_TOKEN="token..."
 source $HOME/.jira_auth.sh
 export PATH=$HOME/programs/jira-cli/bin/:$PATH
-export PATH=$HOME/programs/jira-cli/scripts/:$PATH
+
+# sets GITLAB_TOKEN="token..."
+source $HOME/.gitlab_auth.sh
+export PATH=$HOME/programs/glab/bin/:$PATH
+
+export PATH=$HOME/v3o2_automation/workflow:$PATH
+export PATH=$HOME/v3o2_automation/jira:$PATH
 
 cd $HOME 

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+code=""
+
+function get_code() {
+    if test -n "$1"; then
+        code=$1
+    elif test ! -t 0; then
+        code=$( cat )
+    else
+        echo "Error: Provide parent issue code."
+        exit 1
+    fi
+}
+
+get_code $1
+
+jira issue list --parent $code --columns key,summary,status,assignee -s~"Closed"
+
+exit 0

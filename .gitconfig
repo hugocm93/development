@@ -17,3 +17,5 @@
 	br = branch
 	ci = commit
 	st = status
+[credential "https://git.tecgraf.puc-rio.br"]
+	helper = !/local/hmachado/programs/glab/bin/glab auth git-credential

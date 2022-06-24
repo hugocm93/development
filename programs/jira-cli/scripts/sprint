@@ -1,3 +1,0 @@
-#!/bin/bash
-
-jira sprint list --current -s~"Closed" -t~"Technical task" --order-by rank --reverse --columns status,type,key,summary

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git checkout -b `doing | branch_name`
+exit 0

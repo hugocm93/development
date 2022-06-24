@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jira sprint list --current -s"Ready To Code Review" --columns key --plain --no-headers | xargs
