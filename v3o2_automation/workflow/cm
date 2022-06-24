@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git commit -am "`doing | co-msg`"
+git commit -am "`doing | cm-msg`"
 exit 0

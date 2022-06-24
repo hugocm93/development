@@ -19,5 +19,6 @@ glab mr create \
     --push \
     --yes
 
-doing | mv-issue "Ready To Code Review"
+mv-issue `doing` "Ready To Code Review"
+
 exit 0
