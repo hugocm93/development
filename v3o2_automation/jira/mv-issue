@@ -1,15 +1,5 @@
 #!/bin/bash
 
-function get_code() {
-    if [ $# -eq 3 ]; then
-        jira issue move $1 "$2"
-    elif test ! -t 0; then
-        jira issue move $(cat) "$1"
-    else
-        echo "Error: Provide issue code."
-        exit 1
-    fi
-}
+jira issue move "$@"
 
-get_code "$@"
 exit 0
