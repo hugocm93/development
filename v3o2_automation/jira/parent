@@ -14,24 +14,13 @@ function get_child() {
 
 get_child $1
 
-issues=`jira sprint list --current -s~"Closed" -t~"Technical task" --order-by rank --reverse --columns key --plain --no-headers 2>/dev/null | xargs`
+curl \
+    -s \
+    -X GET \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer $JIRA_API_TOKEN" \
+    http://jira.tecgraf.puc-rio.br:8080/jira/rest/api/latest/issue/$child \
+        | python2 -c "import sys, json; print json.load(sys.stdin)['fields']['parent']['key']"
 
-containsElement () {
-  local e match="$1"
-  shift
-  for e; do [[ "$e" == "$match" ]] && return 0; done
-  return 1
-}
-
-for issue in $issues
-do
-    children=`jira issue list --parent $issue --columns key -s~"Closed" --plain --no-headers 2>/dev/null | xargs`
-    containsElement "$child" $children
-    if [ "$?" -eq "0" ]; then
-        echo $issue
-        exit 0
-    fi
-done
-
-echo "" 
-exit 1
+exit $?
