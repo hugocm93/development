@@ -1,4 +1,8 @@
 #!/bin/bash
 
-git commit -am "`doing | cm-msg`"
+key=`jira me | doing`
+summary=`jira issue list -q "key = $key" --plain --no-headers --columns summary | sed "s/$key[ \t]*//g"`
+msg="[`parent $key`][$key] $summary"
+
+git commit -am "$msg"
 exit $?

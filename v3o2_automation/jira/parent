@@ -1,18 +1,15 @@
 #!/bin/bash
 
-child=""
-function get_child() {
-    if test -n "$1"; then
-        child=$1
-    elif test ! -t 0; then
-        child=$( cat )
-    else
-        echo "Error: Provide child issue code."
-        exit 1
-    fi
-}
+source "$(dirname "$0")/../aux/get-param.sh"
 
-get_child $1
+get-param-func $1
+
+if [[ "$?" -eq 1 ]]; then
+    echo "Error: Provide child issue key."
+    exit 1
+fi
+
+child=$ret
 
 curl \
     -s \

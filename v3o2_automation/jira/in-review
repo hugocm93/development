@@ -1,4 +1,5 @@
 #!/bin/bash
 
-jira sprint list --current -s"In Code Review" --columns key --plain --no-headers | xargs
+source "$(dirname "$0")/../aux/status.sh"
+status-func "$1" "In Code Review"
 exit $?

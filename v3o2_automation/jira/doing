@@ -1,16 +1,5 @@
 #!/bin/bash
 
-user=$(jira me)
-
-function get_user() {
-    if test -n "$1"; then
-        user=$1
-    elif test ! -t 0; then
-        user=$( cat )
-    fi
-}
-
-get_user $1
-
-jira sprint list --current -a"$user" -s"In Progress" --columns key --plain --no-headers | xargs
+source "$(dirname "$0")/../aux/status.sh"
+status-func "$1" "In Progress"
 exit $?

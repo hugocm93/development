@@ -1,11 +1,22 @@
 #!/bin/bash
 
+source "$(dirname "$0")/../aux/get-param.sh"
+
 # git 1.8.4
 if [ -d "/opt/rh/devtoolset-2/" ]; then
     export PATH="/opt/rh/devtoolset-2/root/usr/bin/":$PATH
 fi
 
-label=`doing | team`
+get-param-func $1
+
+if [[ "$?" -eq 1 ]]; then
+    echo "Error: Provide target branch."
+    exit 1
+fi
+
+target_branch=$ret
+
+label=`jira me | doing | team`
 
 glab mr create \
     --fill \
@@ -13,10 +24,9 @@ glab mr create \
     --assignee `jira me` \
     --allow-collaboration \
     --remove-source-branch \
-    --target-branch master \
+    --target-branch $target_branch \
     --label "$label" \
     --push \
-    --yes && \
-    mv-issue `doing` "Ready To Code Review"
+    --yes
 
 exit $?

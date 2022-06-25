@@ -1,4 +1,0 @@
-#!/bin/bash
-
-co-branch && cm && mr
-exit $? 

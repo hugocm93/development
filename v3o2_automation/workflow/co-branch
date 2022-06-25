@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git checkout -b `doing | branch_name`
+git checkout -b `jira me | doing | to-lower`
 exit $?

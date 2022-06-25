@@ -5,11 +5,12 @@ source "$(dirname "$0")/../aux/get-param.sh"
 get-param-func $1
 
 if [[ "$?" -eq 1 ]]; then
-    echo "Error: Provide issue key."
+    echo "Error: Provide string."
     exit 1
 fi
 
-key=$ret
+string=$ret
 
-echo "https://jira.tecgraf.puc-rio.br/jira/browse/$key"
+echo $string | tr '[:lower:]' '[:upper:]'
+
 exit $? 
