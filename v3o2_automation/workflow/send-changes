@@ -1,5 +1,0 @@
-#!/bin/bash
-
-target_branch=`current-branch`
-co-branch && cm && create-mr $target_branch && mv-issue `jira me | doing` "Ready To Code Review"
-exit $? 

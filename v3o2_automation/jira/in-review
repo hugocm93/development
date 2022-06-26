@@ -1,5 +1,0 @@
-#!/bin/bash
-
-source "$(dirname "$0")/../aux/status.sh"
-status-func "$1" "In Code Review"
-exit $?
