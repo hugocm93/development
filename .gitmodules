@@ -1,0 +1,3 @@
+[submodule "v3o2_automation"]
+	path = v3o2_automation
+	url = https://github.com/hugocm93/v3o2_automation.git
