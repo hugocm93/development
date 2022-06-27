@@ -88,6 +88,6 @@ export PATH=$HOME/programs/jira-cli/bin/:$PATH
 source $HOME/.gitlab_auth.sh
 export PATH=$HOME/programs/glab/bin/:$PATH
 
-source $HOME/v3o2_automation/env.sh
+source $HOME/v3o2_cli_tools/env.sh
 
 cd $HOME 
