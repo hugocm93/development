@@ -83,6 +83,7 @@ export LANGUAGE=en_US.UTF-8
 # sets JIRA_API_TOKEN="token..."
 source $HOME/.jira_auth.sh
 export PATH=$HOME/programs/jira-cli/bin/:$PATH
+export EDITOR=vim
 
 # sets GITLAB_TOKEN="token..."
 source $HOME/.gitlab_auth.sh
