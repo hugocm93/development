@@ -113,3 +113,5 @@ au BufRead,BufNewFile *.tpp set filetype=cpp
 set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
+
+colorscheme elflord
