@@ -3,7 +3,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 
 #vars
 V3O2_PATH=$HOME"/v3o2"
-QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e7/"
+QT_ROOT=$V3O2_PATH"/dependencies/ext/qt"
 export MODE="release" #debug ou release ou gdb
 
 #Programs
@@ -12,12 +12,6 @@ alias val='$HOME/programs/val.sh'
 
 if [ -d "/opt/rh/devtoolset-2/" ]; then
     alias git="/opt/rh/devtoolset-2/root/usr/bin/git"
-fi
-
-if [ -d "/opt/rh/devtoolset-2/" ]; then
-    QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e6/"
-else
-    QT_ROOT=$V3O2_PATH"/dependencies/ext/qt_Linux64e7/"
 fi
 
 alias vimDiff='git diff | vim -R -'
