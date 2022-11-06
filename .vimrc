@@ -76,6 +76,7 @@ set mouse=a
 " Configure tags
 set tags+=~/v3o2/dependencies/tags
 set tags+=~/v3o2/lib/tags
+set tags+=~/v3o2/support/tags
 set tags+=~/v3o2/prototipos/DiametrosEstruturasSegmentadas/tags
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
