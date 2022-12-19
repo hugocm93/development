@@ -42,14 +42,17 @@ alias gdbMode='export MODE="gdb" ; check'
 alias eight='scl enable devtoolset-8 zsh'
 
 alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
-alias genTags='cd $V3O2_PATH/src ; CTAGS ;
-               cd $V3O2_PATH/lib ; CTAGS ;
-               cd $V3O2_PATH/support ; CTAGS ;
-               cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
-               cd $V3O2_PATH/dependencies ; CTAGS ;
-               cd /local/hmachado/conan_storage/boost/1.75.0/tecgraf/v3o2/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
-               cd /local/hmachado/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ ; CTAGS ;
-               cd $V3O2_PATH/ ; echo Done'
+alias genTags='
+    cd $V3O2_PATH/src ; CTAGS ;
+    cd $V3O2_PATH/lib ; CTAGS ;
+    cd $V3O2_PATH/support ; CTAGS ;
+    cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
+    cd $V3O2_PATH/dependencies ; CTAGS ;
+    cd /local/hmachado/conan_storage/boost/1.75.0/tecgraf/v3o2/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
+    cd /local/hmachado/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ ; CTAGS ;
+    cd /local/hmachado/conan_storage/poly-visitor/9ee6cad/tecgraf/v3o2/package/1a7ddf9be5e184b64ad5bf535fe5944c274b5d49/ ; CTAGS ;
+    cd /local/hmachado/conan_storage/cpprestsdk/2.10.18/tecgraf/v3o2/package/bdd715b376beff1ad18556afe901911248f941c6/ ; CTAGS ;
+    cd $V3O2_PATH/ ; echo Done'
 alias run='fast ; execute'
 
 #v3o2 symbolic links

@@ -88,6 +88,8 @@ set tags+=~/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a
 set tags+=~/conan_storage/tl-expected/20190710/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/tags
 set tags+=~/conan_storage/cpprestsdk/2.10.18/tecgraf/v3o2/package/bdd715b376beff1ad18556afe901911248f941c6/tags
 set tags+=~/conan_storage/range-v3/0.5.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/tags
+set tags+=~/conan_storage/poly-visitor/9ee6cad/tecgraf/v3o2/package/1a7ddf9be5e184b64ad5bf535fe5944c274b5d49/tags
+set tags+=~/conan_storage/cpprestsdk/2.10.18/tecgraf/v3o2/package/bdd715b376beff1ad18556afe901911248f941c6/tags
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 0
