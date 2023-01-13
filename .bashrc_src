@@ -51,6 +51,7 @@ alias genTags='
     cd $V3O2_PATH/src ; CTAGS ;
     cd $V3O2_PATH/lib ; CTAGS ;
     cd $V3O2_PATH/support ; CTAGS ;
+    cd $V3O2_PATH/core ; CTAGS ;
     cd $V3O2_PATH/prototipos/DiametrosEstruturasSegmentadas/ ; CTAGS ;
     cd $V3O2_PATH/dependencies ; CTAGS ;
     cd /local/hmachado/conan_storage/boost/1.75.0/tecgraf/v3o2/package/b4cf9557a183758df446dd9058601421b40166b0/ ; CTAGS ;
@@ -91,6 +92,10 @@ export EDITOR=vim
 # sets GITLAB_TOKEN="token..."
 source $HOME/.gitlab_auth.sh
 export PATH=$HOME/programs/glab/bin/:$PATH
+
+# sets SLACK_TOKEN="token..."
+source $HOME/.slack_auth.sh
+export TEAM_CHANNEL=C041UJSEV71
 
 source $HOME/v3o2_cli_tools/env.sh
 export CLI_TOOLS_DOUBLE_REVIEW=1
