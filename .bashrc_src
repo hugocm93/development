@@ -38,13 +38,14 @@ fast()
     $V3O2_PATH/build/make.sh `echo "$MODE $@" | xargs`
 }
 
-alias execute='vglrun $V3O2_PATH/build/v3o2.sh $MODE'
+alias execute='$V3O2_PATH/build/v3o2.sh $MODE'
 alias debug='export MODE="debug" ; check'
 alias release='export MODE="release" ; check'
 alias run-test='export MODE="run-test release" ; check'
 alias run-test-debug='export MODE="run-test debug" ; check'
 alias gdbMode='export MODE="gdb" ; check'
 alias eight='scl enable devtoolset-8 zsh'
+alias vncserver='/opt/TurboVNC/bin/vncserver -vgl -wm startxfce4'
 
 alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
 alias genTags='
