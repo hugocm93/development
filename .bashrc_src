@@ -47,7 +47,7 @@ alias gdbMode='export MODE="gdb" ; check'
 alias eight='scl enable devtoolset-8 zsh'
 alias vncserver='/opt/TurboVNC/bin/vncserver -vgl -wm startxfce4'
 
-alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ .'
+alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ --langmap=c++:+.tpp .'
 alias genTags='
     cd $V3O2_PATH/src ; CTAGS ;
     cd $V3O2_PATH/lib ; CTAGS ;
