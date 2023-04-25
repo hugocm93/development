@@ -18,8 +18,8 @@ alias vimDiff='git diff | vim -R -'
 alias editCurrent='vim `git diff --name-only --diff-filter=M | xargs`'
 alias bb='$HOME/programs/boost_build/bin/b2 -j8 -sBOOST_ROOT=$HOME/programs/boost_build/'
 alias glade='/home/p/libs/libsgtk_64/bin/glade-3'
-alias saciTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/ -sCORUJA_ROOT=$V3O2_PATH/dependencies/ext/coruja/ -sQT_ROOT=$QT_ROOT -sEXPECTED_ROOT=$HOME/conan_storage/tl-expected/20190710/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/'
-alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$V3O2_PATH/dependencies/ext/range-v3/'
+alias saciTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$HOME/conan_storage/range-v3/0.5.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ -sCORUJA_ROOT=$V3O2_PATH/dependencies/ext/coruja/ -sQT_ROOT=$QT_ROOT -sEXPECTED_ROOT=$HOME/conan_storage/tl-expected/20190710/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/'
+alias corujaTest='$HOME/programs/boost_1_67_0/b2 -sBOOST_ROOT=$HOME/programs/boost_1_67_0/ -sRANGE_V3_ROOT=$HOME/conan_storage/range-v3/0.5.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/'
 alias newTmux='tmux -S /tmp/sharedtmux new -s shared'
 alias attachTmux='tmux -S /tmp/sharedtmux attach -t shared'
 
@@ -28,24 +28,24 @@ alias gov3o2='cd $V3O2_PATH'
 alias gotest='cd $V3O2_PATH/test'
 alias gosource='cd $V3O2_PATH/src'
 alias gobuild='cd $V3O2_PATH/build'
+alias goscripts='cd $V3O2_PATH/scripts'
 alias goCoruja='cd $V3O2_PATH/dependencies/ext/coruja'
 alias goSaci='cd $V3O2_PATH/dependencies/ext/saci'
-alias goRange='cd $V3O2_PATH/dependencies/ext/range-v3'
 alias check='echo $MODE ; ls -la $V3O2_PATH'
 
 fast()
 {
-    $V3O2_PATH/build/make.sh `echo "$MODE $@" | xargs`
+    $V3O2_PATH/scripts/make.sh `echo "$MODE $@" | xargs`
 }
 
-alias execute='$V3O2_PATH/build/v3o2.sh $MODE'
+alias execute='$V3O2_PATH/scripts/v3o2.sh $MODE'
 alias debug='export MODE="debug" ; check'
 alias release='export MODE="release" ; check'
 alias run-test='export MODE="run-test release" ; check'
 alias run-test-debug='export MODE="run-test debug" ; check'
 alias gdbMode='export MODE="gdb" ; check'
 alias eight='scl enable devtoolset-8 zsh'
-alias vncserver='/opt/TurboVNC/bin/vncserver -vgl -wm startxfce4'
+alias vncserver='/opt/TurboVNC/bin/vncserver -kill :1 ; /opt/TurboVNC/bin/vncserver -vgl -wm startxfce4'
 
 alias CTAGS='$HOME/programs/ctags/bin/bin/ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --languages=c++ --langmap=c++:+.tpp .'
 alias genTags='
@@ -59,6 +59,7 @@ alias genTags='
     cd /local/hmachado/conan_storage/cgal/5.2.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ ; CTAGS ;
     cd /local/hmachado/conan_storage/poly-visitor/9ee6cad/tecgraf/v3o2/package/1a7ddf9be5e184b64ad5bf535fe5944c274b5d49/ ; CTAGS ;
     cd /local/hmachado/conan_storage/cpprestsdk/2.10.18/tecgraf/v3o2/package/bdd715b376beff1ad18556afe901911248f941c6/ ; CTAGS ;
+    cd /local/hmachado/conan_storage/range-v3/0.5.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/ ; CTAGS ;
     cd $V3O2_PATH/ ; echo Done'
 alias run='fast ; execute'
 
@@ -74,7 +75,7 @@ export MANPATH
 source $HOME/programs/tools/tools.sh $HOME/programs/tools/vim-8.2
 
 export LD_LIBRARY_PATH=/nethome/p/INT/CarnacGeo-44_/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$HOME/v3o2/dependencies/ext/qt_Linux64e6/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/v3o2/dependencies/ext/qt/lib:$LD_LIBRARY_PATH
 
 #Grep Settings
 export GREP_OPTIONS="--exclude=*.svn-base --exclude=*.netbeans-base --exclude=*.tmp --exclude=*/.svn/* --exclude=tags"
